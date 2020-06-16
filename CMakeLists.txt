@@ -24,7 +24,7 @@ set (SOURCES
 )
 endif()
 
-add_library(shoom STATIC ${SOURCES})
+add_library(shoom STATIC ${SOURCES} "src/shoom.cpp")
 
 if (${CMAKE_GENERATOR} MATCHES "Visual")
     target_compile_options(shoom PRIVATE -W3 -EHsc)
