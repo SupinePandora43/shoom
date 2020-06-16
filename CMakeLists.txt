@@ -14,17 +14,7 @@ endif()
 
 set (SOURCE_DIR src)
 
-if (${CMAKE_GENERATOR} MATCHES "Visual")
-set (SOURCES
-    ${SOURCE_DIR}/shoom_win32.cc
-)
-else()
-set (SOURCES
-    ${SOURCE_DIR}/shoom_unix_darwin.cc
-)
-endif()
-
-add_library(shoom STATIC ${SOURCES} "src/shoom.cpp")
+add_library(shoom STATIC "src/shoom.cpp")
 
 if (${CMAKE_GENERATOR} MATCHES "Visual")
     target_compile_options(shoom PRIVATE -W3 -EHsc)
